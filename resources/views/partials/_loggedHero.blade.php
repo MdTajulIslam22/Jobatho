@@ -1,4 +1,6 @@
-
+<?php
+    $auth = auth()->check();
+?>
 
 <!-- Hero -->
 <section class="relative h-72 bg-green-300 flex flex-col justify-center align-center text-center space-y-4 mb-4">
@@ -18,12 +20,12 @@
             ---- Job-At-Home ----
         </p>
         <p class="text-2xl text-white my-4">
-            Find your job at home, office and building
+            Find your job at HOME and OFFICE
         </p>
         <div>
-            <a href="/register"
+            <a href="{{$auth?'listings/create':'/register'}}"
                 class="inline-block border-2 border-white text-white py-2 px-4 rounded-xl uppercase mt-2 hover:text-black hover:border-black"
-                >Sign Up to find job</a>
+                >{{$auth?'Post Job':'Sign Up to find job'}}</a>
         </div>
     </div>
     <div style=" width:25%;">
