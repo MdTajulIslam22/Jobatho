@@ -102,7 +102,7 @@ Route::get('/post/{listings}', [listingsController::class, 'show']);
 
 Route::get('/config-cache', function () {
 
-    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('storage:link');
 
     return 'Config cache cleared';
 });

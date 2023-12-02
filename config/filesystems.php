@@ -43,6 +43,14 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        
+        'upload' => [
+            'driver' => 'local',
+            'root' => storage_path('../public/'),
+            'url' => env('APP_URL').'/upload',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
 
         's3' => [
             'driver' => 's3',

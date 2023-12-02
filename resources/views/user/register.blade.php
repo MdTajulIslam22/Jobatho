@@ -91,5 +91,5 @@
                             </p>
                         </div>
                     </form>
-    </x-card>
+                </x-card>
 </x-layout>

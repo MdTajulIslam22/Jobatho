@@ -11,7 +11,6 @@ class ListingsController extends Controller
     // Show all listings/index page
     public function index()
     {
-        // dd(DB::table('jobatho_listings')->get()->all());
         $listings = DB::table('jobatho_listings')
             ->latest()
             ->when(request('tag'), function ($query, $tag) {
@@ -20,7 +19,7 @@ class ListingsController extends Controller
             ->when(request('search'), function ($query, $search) {
                 return $query->where('title', 'like', '%' . $search . '%');
             })
-            ->paginate(10);
+            ->paginate(6);
 
         // dd($listings);
 
@@ -54,7 +53,8 @@ class ListingsController extends Controller
         ]);
 
         if ($request->hasFile('logo')) {
-            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+            $test = $formFields['logo'] = $request->file('logo')->store('upload', 'upload');
+
         }
 
         $formFields['user_id'] = auth()->id();
