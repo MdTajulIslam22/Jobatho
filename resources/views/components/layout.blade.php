@@ -33,14 +33,17 @@
     <body class="mb-48">
         <nav class="flex justify-between items-center mb-4">
             <a href="/"
-                ><img class="w-24" src="{{asset('public/images/logos.png')}}" alt="" class="logo" style="min-height: 50px; margin-left:10px;"
+                ><img class="w-24" src="{{asset('images/logos.png')}}" alt="" class="logo" style="min-height: 50px; margin-left:10px;"
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
                 @auth
                 <li>
-                    <span class="font-bold uppercase">
-                        {{ auth()->user() ->name }}
-                    </span>
+                    <a href="/profile">
+                        <img class="rounded" src="{{asset('images/def-profile.jpg')}}" alt="" width="25px" style="float:left;">
+                        <span class="font-bold uppercase" style="margin-left:5px;">
+                            {{ auth()->user() ->name }}
+                        </span>
+                    </a>
                 </li>
                 <li>
                     <a href="/listings/manage" class="hover:text-laravel"
