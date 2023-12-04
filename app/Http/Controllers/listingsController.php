@@ -54,7 +54,6 @@ class ListingsController extends Controller
 
         if ($request->hasFile('logo')) {
             $test = $formFields['logo'] = $request->file('logo')->store('upload', 'upload');
-
         }
 
         $formFields['user_id'] = auth()->id();
@@ -92,7 +91,7 @@ class ListingsController extends Controller
         ]);
 
         if ($request->hasFile('logo')) {
-            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+            $formFields['logo'] = $request->file('logo')->store('upload', 'upload');
         }
 
         DB::table('jobatho_listings')->where('id', $id)->update($formFields);

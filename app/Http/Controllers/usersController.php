@@ -16,6 +16,7 @@ class UsersController extends Controller
         return view('user.register');
     }
 
+
     #store new user
     // Create New User
     public function store(Request $request)
@@ -34,6 +35,11 @@ class UsersController extends Controller
 
         // Login
         auth()->login($user);
+
+        $user_id = [
+            'jobatho_user_id' => auth()->user()->id
+        ];
+        DB::table('jobatho_profile')->insert($user_id);
 
         return redirect('/')->with('message', 'User created and logged in');
     }

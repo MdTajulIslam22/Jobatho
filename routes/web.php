@@ -4,6 +4,7 @@ use App\Models\listings;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\listingsController;
+use App\Http\Controllers\profileController;
 use App\Http\Controllers\usersController;
 
 /*
@@ -62,6 +63,10 @@ Route::get('/enter', [usersController::class, 'enter'])->name('login')->middlewa
 
 #user log-in
 Route::post('/user/login', [usersController::class, 'login']);
+
+Route::get('/profiles', [profileController::class, 'profile']);
+Route::get('/profile/edit/{id}', [profileController::class, 'edit']);
+Route::put('/profile/update/{id}', [profileController::class, 'update']);
 
 
 

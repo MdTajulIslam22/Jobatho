@@ -37,9 +37,14 @@
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
                 @auth
+
+                <?php
+                    $user_id = auth()->user()->id;
+                    $profile = DB::table('jobatho_profile')->where('jobatho_user_id', $user_id)->first();
+                ?>
                 <li>
-                    <a href="/profile">
-                        <img class="rounded" src="{{asset('images/def-profile.jpg')}}" alt="" width="25px" style="float:left;">
+                    <a href="/profiles">
+                        <img class="rounded" src="{{$profile->image != null? $profile->image :asset('images/def-profile.jpg')}}" alt="" width="25px" style="float:left;">
                         <span class="font-bold uppercase" style="margin-left:5px;">
                             {{ auth()->user() ->name }}
                         </span>

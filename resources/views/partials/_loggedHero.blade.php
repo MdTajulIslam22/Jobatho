@@ -20,7 +20,7 @@
             ---- Job-At-Home ----
         </p>
         <p class="text-2xl text-white my-4">
-            Find your job at HOME and OFFICE
+            Find your job at HOME, OFFICE or FACTORY
         </p>
         <div>
             <a href="{{$auth?'listings/create':'/register'}}"

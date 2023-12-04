@@ -12,7 +12,7 @@
             <tbody>
                 @unless ($listings->isEmpty())
                 @foreach($listings as $gigs)
-                    
+
                 <tr class="border-gray-300">
                     <td
                         class="px-4 py-8 border-t border-b border-gray-300 text-lg"
@@ -46,7 +46,7 @@
                     </td>
                 </tr>
                 @endforeach
-                    
+
                 @else
 
                 <tr class="border-gray-300">
@@ -56,9 +56,10 @@
                         </p>
                     </td>
                 </tr>
-                    
+
                 @endunless
             </tbody>
         </table>
     </div>
 </x-layout>
+<x-footer/>
