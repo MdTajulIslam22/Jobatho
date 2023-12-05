@@ -36,7 +36,7 @@
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
                     name="title"
-                    placeholder="Example: Senior Laravel Developer" value="{{old('title')}}"
+                    placeholder="Example: Security Guard, House keeper" value="{{old('title')}}"
                 />
                 @error('title')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -99,7 +99,7 @@
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
                     name="tags"
-                    placeholder="Example: Laravel, Backend, Postgres, etc"
+                    placeholder="Example: Guard, Backend, Postgres, etc"
                     value="{{old('tags')}}"
                 />
                 @error('tags')
@@ -141,7 +141,7 @@
 
             <div class="mb-6">
                 <button
-                    class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
+                    class="bg-thmColor text-white rounded py-2 px-4 hover:bg-black"
                 >
                     Create Gig
                 </button>

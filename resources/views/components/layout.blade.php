@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="favicon.ico" />
+        <link rel="icon" href="{{asset('fav.png')}}" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -22,7 +22,8 @@
                 theme: {
                     extend: {
                         colors: {
-                            laravel: "#ef3b2d",
+                            // thmColor: "#81c784",
+                            thmColor: "#6ee7b7",
                         },
                     },
                 },
@@ -44,33 +45,33 @@
                 ?>
                 <li>
                     <a href="/profiles">
-                        <img class="rounded" src="{{$profile->image != null? $profile->image :asset('images/def-profile.jpg')}}" alt="" width="25px" style="float:left;">
+                        <img class="rounded" src="{{$profile->image != null? asset($profile->image) :asset('images/def-profile.jpg')}}" alt="" width="25px" style="float:left;">
                         <span class="font-bold uppercase" style="margin-left:5px;">
                             {{ auth()->user() ->name }}
                         </span>
                     </a>
                 </li>
                 <li>
-                    <a href="/listings/manage" class="hover:text-laravel"
+                    <a href="/listings/manage" class="hover:text-thmColor"
                         ><i class="fa-solid fa-gear"></i> Manage Listings</a
                     >
                 </li>
                 <li>
                     <form action="/logout" class="inline" method="post">
                         @csrf
-                        <button class="text-laravel" type="submit">
+                        <button class="text-thmColor" type="submit">
                             <i class="fa-solid fa-arrow-right-to-bracket "></i> Log Out
                         </button>
                     </form>
                 </li>
                 @else
                 <li>
-                    <a href="/register" class="hover:text-laravel"
+                    <a href="/register" class="hover:text-thmColor"
                         ><i class="fa-solid fa-user-plus"></i> Register</a
                     >
                 </li>
                 <li>
-                    <a href="/enter" class="hover:text-laravel"
+                    <a href="/enter" class="hover:text-thmColor"
                         ><i class="fa-solid fa-door-closed"></i>
                         Login</a
                     >
