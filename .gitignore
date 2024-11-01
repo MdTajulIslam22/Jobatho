@@ -1,13 +1,4 @@
-/.phpunit.cache
-/node_modules
-/public/build
-/public/hot
-
-/storage/*.key
-
-.env
-artisan
-serve.php
+vendor
 jobatho.zip
 
 
